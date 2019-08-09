@@ -17,6 +17,7 @@ $ docker login
 ```
 ## Construir la imagen
 ```sh
+$ cd nginx-app
 $ docker build [DOCKERHUB_USER]/ngnix-app:v1 
 ```
 ## Correr la aplicacion
