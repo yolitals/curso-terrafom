@@ -2,6 +2,7 @@
 Es una herramienta para construir imagines casi en cualquier proveedor de nube.
 
 ### Instalación
+En este link se encuentran las instrucciones para instalar packer en los diferentes sistemas operativos.
 - https://www.packer.io/intro/getting-started/install.html
 
 
