@@ -13,6 +13,6 @@ variable "min_size" {
 variable "max_size" {
 }
 variable "availability_zones" {
-  
+  type = list
 }
 
