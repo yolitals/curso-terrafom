@@ -10,7 +10,7 @@ $ curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.4.2/packer_1.4
 $ unzip /tmp/packer.zip -d /usr/local
 
 ## En el siguiente link se encuentra la url de los binarios para los demas sistemas operativos https://www.packer.io/downloads.html
-    ```
+```
 
 
 ### Demo
