@@ -7,7 +7,7 @@ En este link se encuentran las instrucciones para instalar packer en los diferen
 ```sh
 $ curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_darwin_amd64.zip 
 
-$ unzip /tmp/packer.zip -d /usr/local
+$ unzip /tmp/packer.zip -d /usr/local/bin
 
 ## En el siguiente link se encuentra la url de los binarios para los demas sistemas operativos https://www.packer.io/downloads.html
 ```
