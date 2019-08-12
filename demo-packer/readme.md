@@ -2,8 +2,13 @@
 Es una herramienta para construir imagines casi en cualquier proveedor de nube.
 
 ### Instalación
-En este link se encuentran las instrucciones para instalar packer en los diferentes sistemas operativos.
+En este link se encuentran las instrucciones para instalar packer en los diferentes sistemas operativos. En este documento se detallan las instrucciones para sistema operatio Mac y Linux.
 - https://www.packer.io/intro/getting-started/install.html
+    ```sh
+    $ curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_darwin_amd64.zip 
+    $ unzip /tmp/packer.zip -d /usr/local
+    ## En el siguiente link se encuentra la url de los binarios para los demas sistemas operativos https://www.packer.io/downloads.html
+    ```
 
 
 ### Demo
