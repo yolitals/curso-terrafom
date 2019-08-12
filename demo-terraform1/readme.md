@@ -1,7 +1,9 @@
 # AWS instance with terraform
 ## Instalación de terraform
-Terraform tiene un binario para cada sistema operativo, en el siguiente link estan las instrucciones para descargalo e instalarlo en cada uno.
+Terraform tiene un binario para cada sistema operativo, en el siguiente link estan las instrucciones para descargalo e instalarlo en cada uno, en este documento se muestran las instrucciones para instalar en Mac o linux.
 - https://learn.hashicorp.com/terraform/getting-started/install.html
+```sh
+```
 
 ## Verificar la instalación 
 ```sh
