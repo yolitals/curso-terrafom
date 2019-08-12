@@ -1,44 +1,27 @@
-# AWS instance with terraform
-## Instalación de terraform
-Terraform tiene un binario para cada sistema operativo, en el siguiente link estan las instrucciones para descargalo e instalarlo en cada uno.
-- https://learn.hashicorp.com/terraform/getting-started/install.html
+# Configuración del backend
 
-## Verificar la instalación 
+## Crear backend
+En esta demo se utilizara AWS s3 como backend de terraform. por lo tanto lo primero es crear un bucket, la definicion se encuentra lista en la carpeta `aws_bucket`
 ```sh
-$ terraform version
-Terraform v0.12.6
-```
+$ cd aws_bucket
 
-## Configurar la cuenta de aws
-Configurar las credenciales de AWS. Esto no es indispensable pero si se omite será necesario setear las variables dentro de los archivos de configuración de terraform.
-```sh
-$ export AWS_ACCESS_KEY_ID=""
-$ export AWS_SECRET_ACCESS_KEY=""
+$ terraform apply  -var-file dev.tfvars
 ```
 
-## Comandos de terraform
-Para poder ejecutar los comandos de terraform es necesario estar dentro de la carpeta donde se encuentran los archivos de definicion.
-```sh
-$ terraform fmt
-# Este comando es util para dar un formato uniforme a todos los archivos de terraform.
+
+## Configurar Backend
+Para especificar el backend es necesario agregar la siguiente seccion de codigo
 ```
-```sh
-$ terraform validate
-# Este comando es util para validar la sintaxis de los archivos de definición de terraform.
+terraform {
+  backend "s3" {
+    bucket = "terraform-backend-platzi"
+    key    = "terraform/bucket/dev"
+    region = "us-east-2"
+  }
+}
 ```
+En esta demo esta configuración se agregará en un archivo llamado `backend.tf`. Esta configuración se hará efectiva con el comando init.
 ```sh
-$ terraform init
-# Este comando es necesario para descargar los plugins necesarios para el provider.
+$ Terraform init 
 ```
-```sh
-$ terraform plan
-# Con este comando es posible ver los recursos que se crearan con la definición.
-```
-```sh
-$ terraform apply
-# Finalmente cuando estamos seguros de lo que vamos a crear procedemos a aplicar. Esto creara la infraestructura que definimos que en este caso es una instance en AWS.
-```
-```sh
-$ terraform destroy
-# Terraform tambien nos permite destruir la infraestructura creada.
-```
+Si existe actualmente un archivo de estado en el directorio terraform preguntará si deseamos usar ese para guardarlo en s3 o si queremos empezar desde 0 con un archivo en blanco.
