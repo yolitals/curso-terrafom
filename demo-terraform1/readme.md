@@ -3,6 +3,11 @@
 Terraform tiene un binario para cada sistema operativo, en el siguiente link estan las instrucciones para descargalo e instalarlo en cada uno, en este documento se muestran las instrucciones para instalar en Mac o linux.
 - https://learn.hashicorp.com/terraform/getting-started/install.html
 ```sh
+$ curl -o /tmp/packer.zip https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_darwin_amd64.zip
+
+$ unzip /tmp/packer.zip -d /usr/local/bin
+
+## En el siguiente link se encuentra la url de los binarios para los demas sistemas operativos https://www.terraform.io/downloads.html
 ```
 
 ## Verificar la instalación 
