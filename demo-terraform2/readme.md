@@ -1,44 +1,9 @@
-# AWS instance with terraform
+# AutoscalingGroup con terraform
 ## Instalación de terraform
-Terraform tiene un binario para cada sistema operativo, en el siguiente link estan las instrucciones para descargalo e instalarlo en cada uno.
-- https://learn.hashicorp.com/terraform/getting-started/install.html
+El la demo anterior `../demo-terrafom1` se instalo terraform y se configuro una cuenta de AWS para poder construir infraestructura, en esta demo se creará un grupo de instancias. definiendo todos los valores como variables.
 
-## Verificar la instalación 
-```sh
-$ terraform version
-Terraform v0.12.6
-```
-
-## Configurar la cuenta de aws
-Configurar las credenciales de AWS. Esto no es indispensable pero si se omite será necesario setear las variables dentro de los archivos de configuración de terraform.
-```sh
-$ export AWS_ACCESS_KEY_ID=""
-$ export AWS_SECRET_ACCESS_KEY=""
-```
-
-## Comandos de terraform
-Para poder ejecutar los comandos de terraform es necesario estar dentro de la carpeta donde se encuentran los archivos de definicion.
-```sh
-$ terraform fmt
-# Este comando es util para dar un formato uniforme a todos los archivos de terraform.
-```
-```sh
-$ terraform validate
-# Este comando es util para validar la sintaxis de los archivos de definición de terraform.
-```
-```sh
-$ terraform init
-# Este comando es necesario para descargar los plugins necesarios para el provider.
-```
-```sh
-$ terraform plan
-# Con este comando es posible ver los recursos que se crearan con la definición.
-```
-```sh
-$ terraform apply
-# Finalmente cuando estamos seguros de lo que vamos a crear procedemos a aplicar. Esto creara la infraestructura que definimos que en este caso es una instance en AWS.
-```
-```sh
-$ terraform destroy
-# Terraform tambien nos permite destruir la infraestructura creada.
-```
+## Archivos
+- *main.tf* En el archivo main.tf se encuentra la definición de todos los recursos a crear. no es necesario que el archivo se llame _main_ incluso los recursos pueden estar distribuidos en diferentes archivos con diferentes nombres y terraform sera capaz de interpetrarlos. 
+- *variables.tf* En este archivo se encuentran declaradas todas las variables que se utilizaran. El archivo puede llamarse de otra forma, terraform sabra interpretar que son variables. Si bien se pueden crear variables y recursos dentro de un mismo archivo lo recomendable es mantenerlo separado para una mayor claridad.
+- *dev.tfvats* Todos los archivos con la extensión _auto.tfvars_ contendran los valores de las variables declarada terraform no es capaz de interpretar estos archivos por lo que es necesario enviarlo como un argumento `-var-file=dev.tfvars` se debe enviar este argumento con los commandos `plan | appy | destroy`
+- *default.auto.tfvars* A diferencia del anterior los archivos con extensión `auto.tfvars` si los interpreta terraform automaticamente.
