@@ -20,3 +20,4 @@ module "web-app-asg" {
     ingress_rules      = var.ingress_rules
     sg_name            = var.sg_name
 }
+
